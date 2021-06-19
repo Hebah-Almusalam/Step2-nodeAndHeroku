@@ -3,6 +3,7 @@
 var http = require('http'); 
 var fs = require ('fs'); //file system
 var url = require ('url');
+const PORT = process.env.PORT || 5000
 
 http.createServer(function (req, res) {
     var q = url.parse(req.url, true); //store requested url
@@ -19,7 +20,8 @@ http.createServer(function (req, res) {
     res.write(data);
     res.end();
     })
-}).listen(8080);
+}).listen(PORT);
+//.listen(8080);
 //var http used to store built-in () in node.js. to transfer data over internet.
 //node.js cancel the need of using server-side programming language 
 //(like php) and use JS only. 
